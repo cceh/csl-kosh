@@ -24,10 +24,10 @@ Running `csl-kosh/generate_csl_xml.sh`:
 
 * $1 abs_path_to csl-orig (e.g. '/opt/cdsd/csl-orig/v02/'
 * $2 abs_path_to csl-pywork bash files (in csl-pywork e.g. '/opt/cdsd/csl-pywork/v02/''
-* $3 abs_path_to csl-pywork_output e.g. '/opt/cdsd/csl-generated-kosh/'
+* $3 abs_path_to csl-pywork-output e.g. '/opt/cdsd/csl-generated-pywork/'
 * $4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
 
-```bash csl-kosh/generate_csl_xml.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-kosh/ /opt/cdsd/csl-generated-kosh/```
+```bash generate_csl_xml.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-pywork/ /opt/cdsd/csl-generated-kosh/```
 
 ## Generate Kosh files
 
@@ -77,4 +77,4 @@ Example:
 * $3 abs_path_to csl-pywork_output e.g. '/opt/cdsd/csl-generated-pywork/'
 * $4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
 
- `bash csl-kosh/watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated_xml/ /opt/cdsd/csl-generated-kosh/`
+ `bash watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated_xml/ /opt/cdsd/csl-generated-kosh/`
