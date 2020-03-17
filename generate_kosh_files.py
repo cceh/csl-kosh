@@ -8,13 +8,13 @@ csl_ids = ["acc", "ae", "ap90", "ben", "bhs", "bop", "bor", "bur", "cae", "ccs",
            "vei", "wil", "yat"]
 
 
-def generate_kosh_files(csl_ids, abs_path_to_gen_xml_files):
+def generate_kosh_files(csl_ids, abs_path_to_gen_kosh_files):
     for dict in csl_ids:
         # create sub_Dir for each if not there
-        Path('{}/{}'.format(abs_path_to_gen_xml_files, dict)).mkdir(parents=True, exist_ok=True)
+        Path('{}/{}'.format(abs_path_to_gen_kosh_files, dict)).mkdir(parents=True, exist_ok=True)
 
         # we create a .kosh file for each dict
-        filename = "{}/{}/.kosh".format(abs_path_to_gen_xml_files, dict)
+        filename = "{}/{}/.kosh".format(abs_path_to_gen_kosh_files, dict)
         with open(filename, mode="w") as writer:
             # [acc]
             writer.write('[{}]'.format(dict))
@@ -69,18 +69,16 @@ def main():
     # print command line arguments
     # sript's name sys.argv[0]='generate_kosh_files.py'
 
-
-    # sys.argv[2] = abs_path_to_gen_xml_files e.g. '/home/me/repositories/csl-generated_xml/'
-    abs_path_to_gen_xml_files = sys.argv[1]
+    abs_path_to_gen_kosh_files = sys.argv[1]
 
     # remove trailing slashes is present
-    abs_path_to_gen_xml_files = abs_path_to_gen_xml_files.rstrip('/')
-    print('path_to_gen_xml', abs_path_to_gen_xml_files)
+    abs_path_to_gen_kosh_files = abs_path_to_gen_kosh_files.rstrip('/')
+    print('path_to_gen_xml', abs_path_to_gen_kosh_files)
 
     # create kosh files
-    generate_kosh_files(csl_ids, abs_path_to_gen_xml_files)
+    generate_kosh_files(csl_ids, abs_path_to_gen_kosh_files)
     # create mapping files
-    generate_mapping_files(csl_ids, abs_path_to_gen_xml_files)
+    generate_mapping_files(csl_ids, abs_path_to_gen_kosh_files)
 
 
 if __name__ == "__main__":
