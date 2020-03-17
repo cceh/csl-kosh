@@ -37,7 +37,7 @@ Usage:
 
 - sys.argv[1] = abs_path_to_gen_xml_files e.g. 'opt/cdsd/csl-generated-kosh'
 
-    ` python csl-kosh/generate_kosh_files.py  /opt/cdsd/csl-generated-kosh/ `
+            ` python csl-kosh/generate_kosh_files.py  /opt/cdsd/csl-generated-kosh/ `
 
 
 ## **Deploying Kosh**
