@@ -35,9 +35,9 @@ The script generate_kosh_files.py generates all files required by Kosh.
 
 Usage:
 
-- sys.argv[1] = abs_path_to_gen_xml_files e.g. '/opt/cdsd/csl-generated-xml/'
+- sys.argv[1] = abs_path_to_gen_xml_files e.g. 'opt/cdsd/csl-generated-kosh'
 
-    ` python csl-kosh/generate_kosh_files.py  /opt/cdsd/csl-generated-xml/ `
+    ` python csl-kosh/generate_kosh_files.py  /opt/cdsd/csl-generated-kosh/ `
 
 
 ## **Deploying Kosh**
@@ -56,7 +56,7 @@ Kosh must know where the XML and Kosh-related files are located. For this purpos
 
 Deploy Kosh:
 
-    ` docker-compose -p cdsd -f docker-compose.yml -f docker-compose.local.yml up -d `
+    docker-compose -p cdsd -f docker-compose.yml -f docker-compose.local.yml up -d
 
 ## Sync csl-orig
 
@@ -70,11 +70,11 @@ It is recommended to run this script with `screen`.
 
 Example:
 
-` screen -S watch_csl-orig `
+`screen -S watch_csl-orig`
 
 * $1 abs_path_to csl-orig e.g. '/opt/cdsd/csl-orig/v02/'
 * $2 abs_path_to csl-pywork bash files e.g. '/opt/cdsd/csl-pywork/v02/'
 * $3 abs_path_to csl-pywork_output e.g. '/opt/cdsd/csl-generated-pywork/'
 * $4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
 
-    ` bash csl-kosh/watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated_xml/ '/opt/cdsd/csl-generated-kosh/ `
+ `bash csl-kosh/watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated_xml/ /opt/cdsd/csl-generated-kosh/`
