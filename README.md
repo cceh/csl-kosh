@@ -77,4 +77,4 @@ Example:
 * $3 abs_path_to csl-pywork_output e.g. '/opt/cdsd/csl-generated-pywork/'
 * $4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
 
- `bash watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated_xml/ /opt/cdsd/csl-generated-kosh/`
+ `bash watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-pywork/ /opt/cdsd/csl-generated-kosh/`
