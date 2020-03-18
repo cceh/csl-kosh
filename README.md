@@ -60,7 +60,20 @@ Deploy Kosh:
 
 ## Sync csl-orig
 
-The master TXT files located in `csl-orig` are regularly updated. In order to offer the last updates from this repo via Kosh, a sync `git pull` can be scheduled. For this purpose you can use Kosh_Sync ([https://github.com/cceh/kosh_sync](https://github.com/cceh/kosh_sync)) or create a `cron` job.
+The master TXT files located in `csl-orig` are regularly updated. 
+You can create a cron job for pulling regularly this repo from GitHub into your local instance:
+
+`crontab -e`
+
+Add the following entries:
+```
+# m h  dom mon dow   command
+55 23 * * * cd /opt/cdsd/csl-orig/ && git pull
+55 07 * * * cd /opt/cdsd/csl-orig/ && git pull
+```
+
+
+ 
 
 ## Regenerating XML files with watch_csl-orig.sh
 
