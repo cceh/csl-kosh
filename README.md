@@ -12,7 +12,11 @@ For generating and regenerating XML files automatically:
 
 https://github.com/vocabulista/csl-kosh
 
-We recommend to put all the repos under the same path e.g. `/opt/cdsd/`
+We recommend to place all the repos under the same path e.g. `/opt/cdsd/`
+
+anaconda/minicoda is required. 
+
+After cloning `csl-kosh`, inside this directory execute:  `conda env create --file=csl-kosh.yml`
 
 ## **Generate XML files**
 
@@ -26,8 +30,9 @@ Running `csl-kosh/generate_csl_xml.sh`:
 * $2 abs_path_to csl-pywork bash files (in csl-pywork e.g. '/opt/cdsd/csl-pywork/v02/''
 * $3 abs_path_to csl-pywork-output e.g. '/opt/cdsd/csl-generated-pywork/'
 * $4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
+* $5 abs_path to conda.sh e.g. '/home/me/miniconda3/etc/profile.d/conda.sh'
 
-```bash generate_csl_xml.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-pywork/ /opt/cdsd/csl-generated-kosh/```
+`bash generate_csl_xml.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-pywork/ /opt/cdsd/csl-generated-kosh/ /home/me/miniconda3/etc/profile.d/conda.sh`
 
 ## Generate Kosh files
 
@@ -35,9 +40,9 @@ The script generate_kosh_files.py generates all files required by Kosh.
 
 Usage:
 
-- sys.argv[1] = abs_path_to_gen_xml_files e.g. 'opt/cdsd/csl-generated-kosh'
+- sys.argv[1] = abs_path_to_gen_xml_files e.g. 'opt/cdsd/csl-generated-kosh/'
 
-            ` python csl-kosh/generate_kosh_files.py  /opt/cdsd/csl-generated-kosh/ `
+ `python csl-kosh/generate_kosh_files.py  /opt/cdsd/csl-generated-kosh/`
 
 
 ## **Deploying Kosh**
@@ -45,6 +50,8 @@ Usage:
 [Kosh](https://cceh.github.io/kosh/) requires Docker and Docker Compose. 
 
 Clone Kosh: [https://github.com/cceh/kosh](https://github.com/cceh/kosh)
+
+Use the `feat-elem_id` branch
 
 Kosh must know where the XML and Kosh-related files are located. For this purpose you need to provide the path in  `docker-compose.local.yml`:
 ```
@@ -73,7 +80,6 @@ Add the following entries:
 ```
 
 
- 
 
 ## Regenerating XML files with watch_csl-orig.sh
 
@@ -89,5 +95,7 @@ Example:
 * $2 abs_path_to csl-pywork bash files e.g. '/opt/cdsd/csl-pywork/v02/'
 * $3 abs_path_to csl-pywork_output e.g. '/opt/cdsd/csl-generated-pywork/'
 * $4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
+* $5 abs_path to conda.sh e.g. '/home/me/miniconda3/etc/profile.d/conda.sh'
+* $6 abs_path_to_logfile e.g. '/opt/cdsd/csl-logs/logs.txt'
 
- `bash watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-pywork/ /opt/cdsd/csl-generated-kosh/`
+ `bash watch_csl-orig.sh /opt/cdsd/csl-orig/v02/ /opt/cdsd/csl-pywork/v02/ /opt/cdsd/csl-generated-pywork/ /opt/cdsd/csl-generated-kosh/ /home/me/miniconda3/etc/profile.d/conda.sh /opt/cdsd/csl-logs/logs.txt`
