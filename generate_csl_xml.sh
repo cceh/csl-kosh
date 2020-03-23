@@ -8,7 +8,10 @@ csl_ids=(acc ae ap90 ben bhs bop bor bur cae ccs gra gst ieg inm krm mci md mw m
 #$2 abs_path_to csl-pywork bash files (in csl-pywork e.g. '/opt/cdsd/csl-pywork/v02/'
 #$3 abs_path_to csl-pywork_output e.g. '/opt/cdsd/csl-generated-pywork/'
 #$4 abs_path_to_generated_kosh_files e.g. '/opt/cdsd/csl-generated-kosh/'
+#$5 abs_path to conda.sh e.g. '/home/me/miniconda3/etc/profile.d/conda.sh'
 
+source $5
+conda activate csl-kosh
 
 
 for dict_id in "${csl_ids[@]}"
