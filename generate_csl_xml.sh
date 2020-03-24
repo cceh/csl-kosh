@@ -19,7 +19,7 @@ for dict_id in "${csl_ids[@]}"
 do 
 	cd ${2}
 
-    echo "current dir $PWD" 
+  echo "current dir $PWD"
 
 	# generate_orig.py	
 	python generate.py "${dict_id}" inventory_orig.txt _ "${1}${dict_id}" ${3}${dict_id}
