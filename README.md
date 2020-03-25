@@ -16,7 +16,7 @@ We recommend to place all the repos under the same path e.g. `/opt/cdsd/`
 
 anaconda/minicoda is required. 
 
-After cloning `csl-kosh`, inside this directory execute:  `conda env create --file=csl-kosh.yml`
+After cloning `csl-kosh`, inside this directory execute:  `conda env create --file=environment.yml`
 
 ## **Generate XML files**
 
