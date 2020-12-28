@@ -10,7 +10,7 @@ For generating CDSD-XML files:
 
 For generating and regenerating XML files automatically:
 
-https://github.com/vocabulista/csl-kosh
+https://github.com/cceh/csl-kosh
 
 We recommend to place all the repos under the same path e.g. `/opt/cdsd/`
 
