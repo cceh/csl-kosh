@@ -51,19 +51,23 @@ Usage:
 
 Clone Kosh: [https://github.com/cceh/kosh](https://github.com/cceh/kosh)
 
-Use the `feat-elem_id` branch
-
-Kosh must know where the XML and Kosh-related files are located. For this purpose you need to provide the path in  `docker-compose.local.yml`:
+Kosh must know where the XML and Kosh-related files are located. You have to provide their path in  `docker-compose.override.yml` (before `/var/lib/kosh:ro`):
 ```
     version: '2.3'
     services:
     	kosh:
-    		volumes: ['/opt/cdsd/csl-generated-kosh:/var/lib/kosh:ro']
+    	    #...
+         volumes:
+           - ./kosh.ini:/etc/kosh.ini:ro
+           - /opt/cdsd/csl-generated-kosh:/var/lib/kosh:ro   
 ```
 
-Deploy Kosh:
-
-    docker-compose -p cdsd -f docker-compose.yml -f docker-compose.local.yml up -d
+### Run Kosh
+    sudo docker-compose up -d
+### Check the logs
+    sudo docker-compose logs
+### Stop
+    sudo docker-compose down
 
 ## Sync csl-orig
 
@@ -78,7 +82,6 @@ Add the following entries:
 55 23 * * * cd /opt/cdsd/csl-orig/ && git pull
 55 07 * * * cd /opt/cdsd/csl-orig/ && git pull
 ```
-
 
 
 ## Regenerating XML files with watch_csl-orig.sh
